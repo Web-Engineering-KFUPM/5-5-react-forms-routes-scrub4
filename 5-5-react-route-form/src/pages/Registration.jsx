@@ -7,9 +7,35 @@ export default function Registration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    {/*Form validations*/}
+    const nextErrors = {};
+
+    // Email validation
+    if (!email.trim()) {
+      nextErrors.email = "Email is required";
+    } else if (!(email.includes("@") && email.endsWith(".com"))) {
+      nextErrors.email = "Enter a valid email address (must contain @ and end with .com)";
+    }
+
+    // Password validation
+    if (!password.trim()) {
+      nextErrors.password = "Password is required";
+    }
+
+    // Gender validation
+    if (!gender) {
+      nextErrors.gender = "Please select your gender";
+    }
+
+    setErrors(nextErrors);
+
+    // Stop form submit if errors exist
+    if (Object.keys(nextErrors).length > 0) return;
 
     // alert(`Regiteration submit: ${email}`);
+    // Success Alert: Only runs if validation passes
+    alert(`User Registered: ${email}`);
+    {/*Form validations*/}
+
   };
 
   return (
