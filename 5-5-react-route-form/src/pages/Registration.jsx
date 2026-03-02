@@ -30,7 +30,7 @@ export default function Registration() {
     setErrors(nextErrors);
 
     // Stop form submit if errors exist
-if (Object.keys(nextErrors).length === 0) {
+if (Object.keys(nextErrors).length > 0) {
       alert(`User Registered: ${email}`);
     }
   };

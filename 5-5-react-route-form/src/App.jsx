@@ -144,6 +144,10 @@
 // - Use the hints above to guide your implementation, but write the actual JSX and logic yourself.
 // ================================================================
 
+import { Routes, Route, NavLink } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Registration from "./pages/Registration";
 
 export default function App() {
   return (
