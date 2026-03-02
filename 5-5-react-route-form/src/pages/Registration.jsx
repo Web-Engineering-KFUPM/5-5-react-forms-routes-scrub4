@@ -2,7 +2,8 @@ import { useState } from "react";
 
 export default function Registration() {
   const [email, setEmail] = useState("");
-
+  const [password, setPassword] = useState("");
+  const [gender, setGender] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -29,13 +30,9 @@ export default function Registration() {
     setErrors(nextErrors);
 
     // Stop form submit if errors exist
-    if (Object.keys(nextErrors).length > 0) return;
-
-    // alert(`Regiteration submit: ${email}`);
-    // Success Alert: Only runs if validation passes
-    alert(`User Registered: ${email}`);
-    {/*Form validations*/}
-
+if (Object.keys(nextErrors).length === 0) {
+      alert(`User Registered: ${email}`);
+    }
   };
 
   return (
